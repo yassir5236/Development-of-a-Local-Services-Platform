@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ComputersController extends Controller
+class ServicesController extends Controller
 {
     
 
@@ -22,7 +22,7 @@ class ComputersController extends Controller
 
     public function index()
     {
-        return view('computers.index',['computers'=>self::getData()]);
+        return view('services.index',['services'=>self::getData()]);
     }
 
     
@@ -32,7 +32,7 @@ class ComputersController extends Controller
      // ----------------------------------------------------------------
     public function create()
     {
-        return view('service.create');
+        return view('services.create');
 
     }
 
@@ -46,14 +46,14 @@ class ComputersController extends Controller
 
    
     // ----------------------------------------------------------------
-    public function show($computer)
+    public function show($service)
     {
-        $computers= self::getData();
-        $index = array_search($computer,array_column($computers,'id'));
+        $services= self::getData();
+        $index = array_search($service,array_column($services,'id'));
 
         if($index===false)
         abort(404);
-        return view('computers.show',['computer'=>$computers[$index]]);
+        return view('services.show',['service'=>$services[$index]]);
     }
 
 

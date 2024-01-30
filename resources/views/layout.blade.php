@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
     <link href=" {{url('css/style.css')}}" rel="stylesheet" />
     <!-- Styles -->
@@ -837,13 +838,11 @@
 
     <div class="relative min-h-screen flex flex-col">
 
-        <nav class="bg-blue-500 p-4">
+        <nav class="bg-gradient-to-r from-green-800 to-green-400 p-4">
             <div class="container mx-auto flex items-center justify-between">
-                <a href="{{ route('home.index') }}" class="text-white font-semibold text-lg">Home</a>
-                <!-- <a href="{{ route('home.display') }}" class="text-white hover:text-gray-300 ml-4">services</a> -->
-                <!-- <a href="{{ route('home.create') }}" class="text-white hover:text-gray-300 ml-4">create</a> -->
-                
-                <a href="{{ route('computers.index') }}" class="text-white hover:text-gray-300 ml-4">Computers</a>
+                <a href="" class="text-white font-semibold  text-3xl text-lg"><i class="fa-brands fa-hire-a-helper "></i> HireHub</a>  
+                <a href="{{ route('services.index') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Services</a>
+                <a href="{{ route('services.create') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Add Service</a>
                 
             </div>
         </nav>
