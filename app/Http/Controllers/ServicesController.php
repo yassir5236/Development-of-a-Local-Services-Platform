@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Service;
 class ServicesController extends Controller
 {
     
@@ -22,7 +22,7 @@ class ServicesController extends Controller
 
     public function index()
     {
-        return view('services.index',['services'=>self::getData()]);
+        return view('services.index',['services'=>service::all()]);
     }
 
     
@@ -41,7 +41,17 @@ class ServicesController extends Controller
     // ----------------------------------------------------------------
     public function store(Request $request)
     {
-       
+       $service=new Service();
+
+       $service->title=$request->input('title');
+       $service->description=$request->input('description');
+       $service->category=$request->input('category');
+       $service->cost=$request->input('cost');
+
+       $service->save();
+
+       return redirect()->route('services.index');
+
     }
 
    

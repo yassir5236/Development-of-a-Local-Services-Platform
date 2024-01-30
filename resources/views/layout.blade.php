@@ -834,13 +834,13 @@
   
 </head>
 
-<body class="font-sans antialiased bg-gray-100">
+<body class="font-sans antialiased bg-gray-200">
 
     <div class="relative min-h-screen flex flex-col">
 
         <nav class="bg-gradient-to-r from-green-800 to-green-400 p-4">
             <div class="container mx-auto flex items-center justify-between">
-                <a href="" class="text-white font-semibold  text-3xl text-lg"><i class="fa-brands fa-hire-a-helper "></i> HireHub</a>  
+                <a href="{{ route('home.index') }}" class="text-white font-semibold  text-3xl text-lg"><i class="fa-brands fa-hire-a-helper "></i> HireHub</a>  
                 <a href="{{ route('services.index') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Services</a>
                 <a href="{{ route('services.create') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Add Service</a>
                 
