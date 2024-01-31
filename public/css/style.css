@@ -2,3 +2,13 @@
 nav a {
   padding: .5rem;
 }
+
+
+
+body {
+  background-image: url('/image/pexels-cottonbro-studio-9499853.jpg'); 
+  background-size: cover;
+  background-position: center;
+  
+}
+

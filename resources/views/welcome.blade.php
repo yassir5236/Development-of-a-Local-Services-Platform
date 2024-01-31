@@ -5,12 +5,12 @@
 
 
 @section('content')
-<div class=" bg-emerald-200 max-w-7xl mx-auto p-6 lg:p-8">
-        <div class=" text-black flex justify-center">
+<div class="  max-w-7xl mx-auto p-6 lg:p-8">
+        <!-- <div class=" text-black flex justify-center">
             <h1>Welcome</h1>
         </div>
 
-        <div class="mt-16  flex justify-center text-black">THIS IS THE welcome PAGE </div>
+        <div class="mt-16  flex justify-center text-black">THIS IS THE welcome PAGE </div> -->
 
 
 </div>

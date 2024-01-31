@@ -14,6 +14,7 @@
      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
     <link href=" {{url('css/style.css')}}" rel="stylesheet" />
+    
     <!-- Styles -->
     <style>
         /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */
@@ -852,7 +853,7 @@
         </div>
 
     </div>
-
+    
 </body>
 
 </html>
