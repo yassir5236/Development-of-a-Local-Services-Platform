@@ -6,9 +6,9 @@
 
     <div class="flex items-center justify-center  ">
 
-        <form action="{{ route('services.store') }}" method="post" class="p-8 rounded-lg shadow-md w-96 border boder-2 bg-gray-200 bg-opacity-30">
+        <form action="{{ route('services.store') }}" method="post" class="p-8 rounded-lg shadow-md w-96 border boder-2 bg-gray-200 bg-opacity-60">
             <div class=" text-2xl font-bold text-white flex justify-center pb-6  ">
-                <h1> Create a new Service </h1>
+                <h1 class="text-green-600 text-3xl"> Create a new Service </h1>
             </div>
             @csrf
             <div class="mb-4">
