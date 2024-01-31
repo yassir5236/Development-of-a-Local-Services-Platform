@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\Category;
 class ServicesController extends Controller
 {
     
@@ -30,28 +31,28 @@ class ServicesController extends Controller
 
 
      // ----------------------------------------------------------------
-    public function create()
-    {
-        return view('services.create');
-
-    }
+     public function create()
+     {
+         $categories = Category::all();
+         return view('services.create', compact('categories'));
+     }
 
 
 
     // ----------------------------------------------------------------
     public function store(Request $request)
     {
-       $service=new Service();
+        // Validation des données ici
 
-       $service->title=$request->input('title');
-       $service->description=$request->input('description');
-       $service->category=$request->input('category');
-       $service->cost=$request->input('cost');
+        Service::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'category_id' => $request->category_id,
+            'cost' => $request->cost,
+            'email' => $request->email,
+        ]);
 
-       $service->save();
-
-       return redirect()->route('services.index');
-
+        return redirect()->route('services.index')->with('success', 'Service ajouté avec succès.');
     }
 
    

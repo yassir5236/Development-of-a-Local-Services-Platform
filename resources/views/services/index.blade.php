@@ -14,8 +14,10 @@
                 <div class="bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 duration-300">
                     <h2 class="text-2xl font-semibold mb-4 text-green-600 text-center ">{{ $service->title }}</h2>
                     <p class="text-gray-700 mb-2">{{ $service->description }}</p>
-                    <p class="text-gray-700 mb-2">{{ $service->category }}</p>
-                    <p class="text-gray-700">{{ $service->cost }}$</p>
+                    <p class="text-gray-700 mb-2"><strong>Category:</strong> {{ $service->category->name }}</p>
+                    <p class="text-gray-700 mb-2"><strong> Cost : </strong> {{ $service->cost }}$</p>
+                    <p class="text-gray-700 mb-2"><strong> Email : </strong> {{ $service->email }}$</p>
+                    
                 </div>
             @endforeach
         </div>
