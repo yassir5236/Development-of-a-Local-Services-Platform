@@ -12,7 +12,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
             @foreach($services as $service)
                 <div class="bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 duration-300">
-                    <h2 class="text-2xl font-semibold mb-4 text-blue-600 text-center ">{{ $service->title }}</h2>
+                    <h2 class="text-2xl font-semibold mb-4 text-green-600 text-center ">{{ $service->title }}</h2>
                     <p class="text-gray-700 mb-2">{{ $service->description }}</p>
                     <p class="text-gray-700 mb-2">{{ $service->category }}</p>
                     <p class="text-gray-700">{{ $service->cost }}$</p>
