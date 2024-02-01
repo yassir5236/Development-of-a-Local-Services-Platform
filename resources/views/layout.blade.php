@@ -10,11 +10,11 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
     <link href=" {{url('css/style.css')}}" rel="stylesheet" />
-    
+
     <!-- Styles -->
     <style>
         /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */
@@ -832,7 +832,7 @@
             }
         }
     </style>
-  
+
 </head>
 
 <body class="font-sans antialiased bg-gray-200">
@@ -841,10 +841,23 @@
 
         <nav class="bg-gradient-to-r from-green-800 to-green-400 p-4">
             <div class="container mx-auto flex items-center justify-between">
-                <a href="{{ route('home.index') }}" class="text-white font-semibold  text-3xl text-lg"><i class="fa-brands fa-hire-a-helper "></i> HireHub</a>  
-                <a href="{{ route('services.index') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Services</a>
-                <a href="{{ route('services.create') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Add Service</a>
+                <a href="{{ route('home.index') }}" class="text-white font-semibold text-3xl text-lg"><i class="fa-brands fa-hire-a-helper "></i> HireHub</a>
                 
+                <a href="{{ route('services.index') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Services</a>
+                <!-- Ajoutez ces lignes pour les liens de login et register -->
+                @guest
+                <a href="{{ route('login') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Login</a>
+                <a href="{{ route('register') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Register</a>
+                @endguest
+
+                @auth
+                <a href="{{ route('services.create') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Add Service</a>
+
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <button type="submit" class="text-white text-2xl hover:text-gray-300 ml-4">Déconnexion</button>
+                </form>
+                @endauth
             </div>
         </nav>
 
@@ -853,7 +866,7 @@
         </div>
 
     </div>
-    
+
 </body>
 
 </html>
