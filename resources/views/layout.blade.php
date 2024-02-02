@@ -837,35 +837,93 @@
 
 <body class="font-sans antialiased bg-gray-200">
 
+   
     <div class="relative min-h-screen flex flex-col">
 
-        <nav class="bg-gradient-to-r from-green-800 to-green-400 p-4">
-            <div class="container mx-auto flex items-center justify-between">
-                <a href="{{ route('home.index') }}" class="text-white font-semibold text-3xl text-lg"><i class="fa-brands fa-hire-a-helper "></i> HireHub</a>
-                
+    
+    <nav class="bg-gradient-to-r from-green-800 to-green-400 p-4">
+        <div class="container mx-auto flex items-center justify-between">
+           
+            <div class="block lg:hidden">
+                <button id="burger-menu-btn" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <a href="{{ route('home.index') }}" class="text-white font-semibold text-3xl text-lg"><i class="fa-brands fa-hire-a-helper "></i> HireHub</a>
+
+      
+            <div class="hidden lg:flex">
                 <a href="{{ route('services.index') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Services</a>
-                <!-- Ajoutez ces lignes pour les liens de login et register -->
+
+                
                 @guest
-                <a href="{{ route('login') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Login</a>
-                <a href="{{ route('register') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Register</a>
+                    <a href="{{ route('login') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Login</a>
+                    <a href="{{ route('register') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Register</a>
                 @endguest
 
+               
                 @auth
-                <a href="{{ route('services.create') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Add Service</a>
-
-                <form action="{{ route('logout') }}" method="post">
-                    @csrf
-                    <button type="submit" class="text-white text-2xl hover:text-gray-300 ml-4">Déconnexion</button>
-                </form>
+                    <a href="{{ route('services.create') }}" class="text-white text-2xl hover:text-gray-300 ml-4">Add Service</a>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="text-white text-2xl hover:text-gray-300 ml-4">Déconnexion</button>
+                    </form>
                 @endauth
             </div>
-        </nav>
-
-        <div class="container mx-auto flex-1 mt-8">
-            @yield('content')
         </div>
+    </nav>
 
+ 
+<div id="burger-menu-overlay" class="hidden lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50">
+    <div class="container mx-auto flex items-center justify-center h-full ">
+        <div class="text-white text-2xl">
+            
+            <button id="close-burger-menu-btn" class="text-white focus:outline-none">
+                <i class="fas fa-times text-3xl"></i>
+            </button>
+
+           
+            <div class="mt-8">
+                <a href="{{ route('services.index') }}" class="block py-2 text-xl hover:text-gray-300 transition duration-300 ease-in-out">Services</a>
+                @guest
+                    <a href="{{ route('login') }}" class="block py-2 text-xl hover:text-gray-300 transition duration-300 ease-in-out">Login</a>
+                    <a href="{{ route('register') }}" class="block py-2 text-xl hover:text-gray-300 transition duration-300 ease-in-out">Register</a>
+                @endguest
+                @auth
+                    <a href="{{ route('services.create') }}" class="block py-2 text-xl hover:text-gray-300 transition duration-300 ease-in-out">Add Service</a>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="block py-2 text-xl hover:text-gray-300 transition duration-300 ease-in-out">Déconnexion</button>
+                    </form>
+                @endauth
+            </div>
+        </div>
     </div>
+</div>
+
+<script>
+  
+    document.getElementById('burger-menu-btn').addEventListener('click', function () {
+        document.getElementById('burger-menu-overlay').classList.toggle('hidden');
+    });
+
+  
+    document.getElementById('close-burger-menu-btn').addEventListener('click', function () {
+        document.getElementById('burger-menu-overlay').classList.add('hidden');
+    });
+</script>
+
+
+ 
+    <div class="container mx-auto flex-1 mt-8">
+        @yield('content')
+    </div>
+
+</div>
+
+
+
 
 </body>
 
