@@ -26,11 +26,13 @@
                         id="password" type="password" placeholder="********" name="password" required>
                 </div>
                 <div class="mb-6">
+                    <div class=" bg-blue-500">
                     <button
                         class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         type="submit">
                         Log in
                     </button>
+                    </div>
                 </div>
                 <p class="text-gray-700 text-xs text-center">
                     Don't have an account? <a class="text-blue-500 hover:text-blue-700" href="{{ route('register') }}">Register</a>.
